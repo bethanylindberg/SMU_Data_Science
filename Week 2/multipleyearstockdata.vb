@@ -21,15 +21,20 @@ Worksheets(y).Activate
     Range("L1").Value = "Total Stock Volume"
     summarytablerow = 2
     lastrow = Cells(Rows.Count, 1).End(xlUp).Row
+    yearopenidx = 2
 
         For x = 2 To lastrow
         
-            'Preserve open value
-           Do While IsEmpty(Range("K" & summarytablerow))
-           Range("K" & summarytablerow).Value = Cells(x, 3).Value
-           Loop
-            
+            'check if ticker was traded
+            If Cells(x,7)<>0 then
+               'Preserve open value
+               Do While IsEmpty(Range("K" & summarytablerow))
+               Range("K" & summarytablerow).Value = Cells(x, 3).Value
+               Loop
+            End if
+
                 If Cells(x + 1, 1).Value <> Cells(x, 1).Value Then 'if not in the same ticker
+                    If Cells(yearopenidx,7).value <> 0 Then
                     ticker = (Cells(x, 1)) 'set ticker
                     yearclose = (Cells(x, 6)) 'set close
                     yearopen = (Cells(summarytablerow, 11)) 'set open
@@ -39,14 +44,14 @@ Worksheets(y).Activate
                     Range("J" & summarytablerow).Value = yearlychange 'add yearlychange to summary table
                         If yearopen = 0 Then
                             Range("K" & summarytablerow).Value = 0
-                            Else
+                        Else
                             Range("K" & summarytablerow).Value = yearlychange / yearopen 'calculate percentage change
                         End If
                     Range("L" & summarytablerow).Value = volume 'add volume to summary table
                     summarytablerow = summarytablerow + 1 'add one to summary table row
                     volume = 0 'reset volume for next ticker
-                        Else 'if in same ticker
-                    volume = volume + Cells(x, 7) 'add to volume
+                Else 'if in same ticker
+                    volume = volume + Cells(x, 7).value 'add to volume
                 End If
                 
         Next x
