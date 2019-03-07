@@ -1,10 +1,10 @@
-Introduction
+PyCity Schools Introduction
 
 For this report, a data set of district wide standardized test results was analyzed to search for trends or actionable insights with the goal of approving student success overall.
 
 Overview of the Data
 
-The analyzed data set includes information on 15 highschools with a total of 39,170 students. Parameters included are budget per school, student names and IDs, school size and math and reading scores. Below is a high level summary for the entire District.
+The analyzed data set includes information on 15 highschools with a total of 39,170 students. Parameters included are budget per school, student names & IDs, math & reading scores and school size. Below is a high level summary for the entire District.
 
 |   | Total Schools | Total Students | Total Budget   | Average Math Score | Average Reading Score | % Passing Math | % Passing Reading | % Overall Passing Rate |
 |---|---------------|----------------|----------------|--------------------|-----------------------|----------------|-------------------|------------------------|
@@ -35,3 +35,5 @@ Conclusions
 This analysis suggests that the District should invest in building more schools to reduce number of students per school, as increasing a school's budget alone has not been shown to increase math or reading scores.
 
 More analysis should be done on differences between Charter and District schools so that the District schools can identify changes to be implemented so that Charter school success can be emulated.
+
+__________
