@@ -1,9 +1,10 @@
 
 
-District Summary Table
+School Summary Table
 
 |   | Total Schools | Total Students | Total Budget   | Average Math Score | Average Reading Score | % Passing Math | % Passing Reading | % Overall Passing Rate |
 |---|---------------|----------------|----------------|--------------------|-----------------------|----------------|-------------------|------------------------|
+<<<<<<< HEAD
 | 0 | 15            | 39,170         | $24,649,428.00 | 78.985371          | 81.87784              | 74.98%         | 85.81%            | 80.43%                 |
 
 School Summary Table
@@ -25,3 +26,6 @@ Shelton High School|Charter| 1,761 |$1,056,600.00 |$600.00|83.36|83.73|93.87|95.
 Thomas High School|Charter| 1,635 |$1,043,130.00 |$638.00|83.42|83.85|93.27|97.31|95.29
 Wilson High School|Charter| 2,283 |$1,319,574.00 |$578.00|83.27|83.99|93.87|96.54|95.20
 Wright High School|Charter| 1,800 |$1,049,400.00 |$583.00|83.68|83.96|93.33|96.61|94.97
+=======
+| 0 | 15            | 39,170         | $24,649,428.00 | 78.985371          | 81.87784              | 74.98%         | 85.81%            | 80.43%                 |
+>>>>>>> parent of 20a2b47... Added summary table
