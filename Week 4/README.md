@@ -36,6 +36,7 @@ The analyzed data set includes information on 15 highschools with a total of 39,
   </tbody>
 </table>
 </div>
+
 # Methods
 
 Jupyter notebooks with the pandas python library was used to merge, parse and aggregate the data. (see 'PyCity Schools.ipynb')
@@ -258,7 +259,8 @@ The data was first grouped by school to find total students, per student budget,
 </div>
 
 This grouped data was then used to show the top and bottom performing schools. (Out[4-5])
-# Top Performing Schools
+
+## Top Performing Schools
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -471,6 +473,7 @@ This grouped data was then used to show the top and bottom performing schools. (
 </table>
 </div>
 Next, scores were checked across grades to check for trends. (Out[6-7])
+
 ## Math scores by grade
 <table border="1" class="dataframe">
   <thead>
@@ -598,7 +601,8 @@ Next, scores were checked across grades to check for trends. (Out[6-7])
   </tbody>
 </table>
 </div>
-# Reading Scores by Grade
+
+## Reading Scores by Grade
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -726,7 +730,8 @@ Next, scores were checked across grades to check for trends. (Out[6-7])
 </table>
 </div>
 The final three tables show analysis of scores by school spending, size and type. (Out[8-10])
-# Scores by School Spending
+
+## Scores by School Spending
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -782,7 +787,8 @@ The final three tables show analysis of scores by school spending, size and type
   </tbody>
 </table>
 </div>
-# Scores by School Size
+
+## Scores by School Size
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -830,7 +836,8 @@ The final three tables show analysis of scores by school spending, size and type
   </tbody>
 </table>
 </div>
-# Scores by School Type
+
+## Scores by School Type
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -870,6 +877,7 @@ The final three tables show analysis of scores by school spending, size and type
   </tbody>
 </table>
 </div>
+
 # Results of Analysis
 
 Charter schools were observed to have higher scores than district schools. When all schools are ranked, places 1-8 are occupied by Charter Schools and places 9-15 are occupied by District Schools. (Out[4])
