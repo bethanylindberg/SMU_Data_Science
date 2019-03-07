@@ -12,13 +12,13 @@ The analyzed data set includes information on 15 highschools with a total of 39,
 
 Methods
 
-Jupyter notebooks with the pandas python library was used to merge, parse and aggregate the data.
+Jupyter notebooks with the pandas python library was used to merge, parse and aggregate the data. (see 'PyCity Schools.ipynb')
 
 Analysis
 
-The data was first grouped by school to find total students, per student budget, average scores and school population passing rate for both math and reading. This grouped data was then used to show the top and bottom performing schools. 
-Next, scores were checked across grades to check for trends.
-The final three tables show analysis of scores by school spending, size and type.
+The data was first grouped by school to find total students, per student budget, average scores and school population passing rate for both math and reading.(Out[3]) This grouped data was then used to show the top and bottom performing schools. (Out[4-5])
+Next, scores were checked across grades to check for trends. (Out[6-7])
+The final three tables show analysis of scores by school spending, size and type. (Out[8-10])
 
 Results of Analysis
 
