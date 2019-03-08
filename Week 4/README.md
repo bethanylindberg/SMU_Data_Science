@@ -897,3 +897,715 @@ This analysis suggests that the District should invest in building more schools 
 More analysis should be done on differences between Charter and District schools so that the District schools can identify changes to be implemented so that Charter school success can be emulated.
 
 __________
+
+
+# Heroes of Pymoli Introduction
+
+With free to play games such as Heroes of Pymoli, in game purchases are an important source of revenue. This analysis is intended to identify action steps to both increase profitability and improve user experience.
+
+# Overview of the Data
+
+The data set analyzed is a total of 780 purchases that included age and gender demographics for the purchasers as well as price, item ID and item name for the purchased items.
+
+# Methods
+
+Jupyter notebooks with the pandas python library was used to parse and aggregate the data.
+
+# Analysis
+
+The data was grouped by sign name to identify the number of unique players making purchases. 
+Next a high level summary of total items, purchases and average price per item was done as a starting point.
+
+## Item Overview
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Number of Unique Items</th>
+      <th>Average Price</th>
+      <th>Number of Purchases</th>
+      <th>Total Revenue</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>183</td>
+      <td>$3.05</td>
+      <td>780</td>
+      <td>$2,379.77</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+Sign names were next grouped by age and gender an analyze trends in purchase count, average purchase price, total purchase value and average purchase per person for each demographic.
+
+## Gender Demographics
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Total Count</th>
+      <th>Percentage of Players</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Male</th>
+      <td>484</td>
+      <td>84.03%</td>
+    </tr>
+    <tr>
+      <th>Female</th>
+      <td>81</td>
+      <td>14.06%</td>
+    </tr>
+    <tr>
+      <th>Other / Non-Disclosed</th>
+      <td>11</td>
+      <td>1.91%</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+## Purchasing Analysis (Gender)
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Purchase Count</th>
+      <th>Average Purchase Price</th>
+      <th>Total Purchase Value</th>
+      <th>Average Purchase per person</th>
+    </tr>
+    <tr>
+      <th>Gender</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Female</th>
+      <td>113</td>
+      <td>$3.20</td>
+      <td>$361.94</td>
+      <td>$4.47</td>
+    </tr>
+    <tr>
+      <th>Male</th>
+      <td>652</td>
+      <td>$3.02</td>
+      <td>$1967.64</td>
+      <td>$4.07</td>
+    </tr>
+    <tr>
+      <th>Other / Non-Disclosed</th>
+      <td>15</td>
+      <td>$3.35</td>
+      <td>$50.19</td>
+      <td>$4.56</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+## Age Demographics
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Total Count</th>
+      <th>Percentage of Players</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>&lt;10</th>
+      <td>17</td>
+      <td>2.95%</td>
+    </tr>
+    <tr>
+      <th>10-14</th>
+      <td>22</td>
+      <td>3.82%</td>
+    </tr>
+    <tr>
+      <th>15-19</th>
+      <td>107</td>
+      <td>18.58%</td>
+    </tr>
+    <tr>
+      <th>20-24</th>
+      <td>258</td>
+      <td>44.79%</td>
+    </tr>
+    <tr>
+      <th>25-29</th>
+      <td>77</td>
+      <td>13.37%</td>
+    </tr>
+    <tr>
+      <th>30-34</th>
+      <td>52</td>
+      <td>9.03%</td>
+    </tr>
+    <tr>
+      <th>35-39</th>
+      <td>31</td>
+      <td>5.38%</td>
+    </tr>
+    <tr>
+      <th>40+</th>
+      <td>12</td>
+      <td>2.08%</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+## Purchasing Analysis (Age)
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Purchase Count</th>
+      <th>Average Purchase Price</th>
+      <th>Total Purchase Value</th>
+      <th>Average Purchase per person</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>10-14</th>
+      <td>28</td>
+      <td>$2.96</td>
+      <td>$82.78</td>
+      <td>$3.76</td>
+    </tr>
+    <tr>
+      <th>15-19</th>
+      <td>136</td>
+      <td>$3.04</td>
+      <td>$412.89</td>
+      <td>$3.86</td>
+    </tr>
+    <tr>
+      <th>20-24</th>
+      <td>365</td>
+      <td>$3.05</td>
+      <td>$1114.06</td>
+      <td>$4.32</td>
+    </tr>
+    <tr>
+      <th>25-29</th>
+      <td>101</td>
+      <td>$2.90</td>
+      <td>$293.00</td>
+      <td>$3.81</td>
+    </tr>
+    <tr>
+      <th>30-34</th>
+      <td>73</td>
+      <td>$2.93</td>
+      <td>$214.00</td>
+      <td>$4.12</td>
+    </tr>
+    <tr>
+      <th>35-39</th>
+      <td>41</td>
+      <td>$3.60</td>
+      <td>$147.67</td>
+      <td>$4.76</td>
+    </tr>
+    <tr>
+      <th>40+</th>
+      <td>13</td>
+      <td>$2.94</td>
+      <td>$38.24</td>
+      <td>$3.19</td>
+    </tr>
+    <tr>
+      <th>&lt;10</th>
+      <td>23</td>
+      <td>$3.35</td>
+      <td>$77.13</td>
+      <td>$4.54</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+## Top Spenders
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Purchase Count</th>
+      <th>Average Purchase Price</th>
+      <th>Total Purchase Value</th>
+    </tr>
+    <tr>
+      <th>SN</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Lisosia93</th>
+      <td>5</td>
+      <td>$3.79</td>
+      <td>$18.96</td>
+    </tr>
+    <tr>
+      <th>Idastidru52</th>
+      <td>4</td>
+      <td>$3.86</td>
+      <td>$15.45</td>
+    </tr>
+    <tr>
+      <th>Chamjask73</th>
+      <td>3</td>
+      <td>$4.61</td>
+      <td>$13.83</td>
+    </tr>
+    <tr>
+      <th>Iral74</th>
+      <td>4</td>
+      <td>$3.40</td>
+      <td>$13.62</td>
+    </tr>
+    <tr>
+      <th>Iskadarya95</th>
+      <td>3</td>
+      <td>$4.37</td>
+      <td>$13.10</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+Finally, the items themselves were grouped to identify the most popular and most profitable.
+
+## Most Popular Items
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>Purchase Count</th>
+      <th>Item Price</th>
+      <th>Total Purchase Value</th>
+    </tr>
+    <tr>
+      <th>Item ID</th>
+      <th>Item Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>178</th>
+      <th>Oathbreaker, Last Hope of the Breaking Storm</th>
+      <td>12</td>
+      <td>$4.23</td>
+      <td>$50.76</td>
+    </tr>
+    <tr>
+      <th>145</th>
+      <th>Fiery Glass Crusader</th>
+      <td>9</td>
+      <td>$4.58</td>
+      <td>$41.22</td>
+    </tr>
+    <tr>
+      <th>108</th>
+      <th>Extraction, Quickblade Of Trembling Hands</th>
+      <td>9</td>
+      <td>$3.53</td>
+      <td>$31.77</td>
+    </tr>
+    <tr>
+      <th>82</th>
+      <th>Nirvana</th>
+      <td>9</td>
+      <td>$4.90</td>
+      <td>$44.10</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <th>Pursuit, Cudgel of Necromancy</th>
+      <td>8</td>
+      <td>$1.02</td>
+      <td>$8.16</td>
+    </tr>
+    <tr>
+      <th>103</th>
+      <th>Singed Scalpel</th>
+      <td>8</td>
+      <td>$4.35</td>
+      <td>$34.80</td>
+    </tr>
+    <tr>
+      <th>75</th>
+      <th>Brutality Ivory Warmace</th>
+      <td>8</td>
+      <td>$2.42</td>
+      <td>$19.36</td>
+    </tr>
+    <tr>
+      <th>72</th>
+      <th>Winter's Bite</th>
+      <td>8</td>
+      <td>$3.77</td>
+      <td>$30.16</td>
+    </tr>
+    <tr>
+      <th>60</th>
+      <th>Wolf</th>
+      <td>8</td>
+      <td>$3.54</td>
+      <td>$28.32</td>
+    </tr>
+    <tr>
+      <th>59</th>
+      <th>Lightning, Etcher of the King</th>
+      <td>8</td>
+      <td>$4.23</td>
+      <td>$33.84</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <th>Shadow Strike, Glory of Ending Hope</th>
+      <td>8</td>
+      <td>$3.16</td>
+      <td>$25.28</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <th>Retribution Axe</th>
+      <td>8</td>
+      <td>$2.22</td>
+      <td>$17.76</td>
+    </tr>
+    <tr>
+      <th>92</th>
+      <th>Final Critic</th>
+      <td>8</td>
+      <td>$4.88</td>
+      <td>$39.04</td>
+    </tr>
+    <tr>
+      <th>53</th>
+      <th>Vengeance Cleaver</th>
+      <td>7</td>
+      <td>$2.05</td>
+      <td>$14.35</td>
+    </tr>
+    <tr>
+      <th>110</th>
+      <th>Suspension</th>
+      <td>7</td>
+      <td>$1.44</td>
+      <td>$10.08</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <th>Thorn, Satchel of Dark Souls</th>
+      <td>7</td>
+      <td>$1.33</td>
+      <td>$9.31</td>
+    </tr>
+    <tr>
+      <th>71</th>
+      <th>Demise</th>
+      <td>7</td>
+      <td>$1.61</td>
+      <td>$11.27</td>
+    </tr>
+    <tr>
+      <th>117</th>
+      <th>Heartstriker, Legacy of the Light</th>
+      <td>7</td>
+      <td>$1.79</td>
+      <td>$12.53</td>
+    </tr>
+    <tr>
+      <th>159</th>
+      <th>Oathbreaker, Spellblade of Trials</th>
+      <td>7</td>
+      <td>$3.08</td>
+      <td>$21.56</td>
+    </tr>
+    <tr>
+      <th>85</th>
+      <th>Malificent Bag</th>
+      <td>7</td>
+      <td>$1.75</td>
+      <td>$12.25</td>
+    </tr>
+    <tr>
+      <th>164</th>
+      <th>Exiled Doomblade</th>
+      <td>7</td>
+      <td>$1.63</td>
+      <td>$11.41</td>
+    </tr>
+    <tr>
+      <th>141</th>
+      <th>Persuasion</th>
+      <td>7</td>
+      <td>$3.19</td>
+      <td>$22.33</td>
+    </tr>
+    <tr>
+      <th>78</th>
+      <th>Glimmer, Ender of the Moon</th>
+      <td>7</td>
+      <td>$4.40</td>
+      <td>$30.80</td>
+    </tr>
+    <tr>
+      <th>102</th>
+      <th>Avenger</th>
+      <td>6</td>
+      <td>$3.44</td>
+      <td>$20.64</td>
+    </tr>
+    <tr>
+      <th>129</th>
+      <th>Fate, Vengeance of Eternal Justice</th>
+      <td>6</td>
+      <td>$1.54</td>
+      <td>$9.24</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+## Most Profitable Items
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>Purchase Count</th>
+      <th>Item Price</th>
+      <th>Total Purchase Value</th>
+    </tr>
+    <tr>
+      <th>Item ID</th>
+      <th>Item Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>178</th>
+      <th>Oathbreaker, Last Hope of the Breaking Storm</th>
+      <td>12</td>
+      <td>$4.23</td>
+      <td>$50.76</td>
+    </tr>
+    <tr>
+      <th>82</th>
+      <th>Nirvana</th>
+      <td>9</td>
+      <td>$4.90</td>
+      <td>$44.10</td>
+    </tr>
+    <tr>
+      <th>145</th>
+      <th>Fiery Glass Crusader</th>
+      <td>9</td>
+      <td>$4.58</td>
+      <td>$41.22</td>
+    </tr>
+    <tr>
+      <th>92</th>
+      <th>Final Critic</th>
+      <td>8</td>
+      <td>$4.88</td>
+      <td>$39.04</td>
+    </tr>
+    <tr>
+      <th>103</th>
+      <th>Singed Scalpel</th>
+      <td>8</td>
+      <td>$4.35</td>
+      <td>$34.80</td>
+    </tr>
+    <tr>
+      <th>59</th>
+      <th>Lightning, Etcher of the King</th>
+      <td>8</td>
+      <td>$4.23</td>
+      <td>$33.84</td>
+    </tr>
+    <tr>
+      <th>108</th>
+      <th>Extraction, Quickblade Of Trembling Hands</th>
+      <td>9</td>
+      <td>$3.53</td>
+      <td>$31.77</td>
+    </tr>
+    <tr>
+      <th>78</th>
+      <th>Glimmer, Ender of the Moon</th>
+      <td>7</td>
+      <td>$4.40</td>
+      <td>$30.80</td>
+    </tr>
+    <tr>
+      <th>72</th>
+      <th>Winter's Bite</th>
+      <td>8</td>
+      <td>$3.77</td>
+      <td>$30.16</td>
+    </tr>
+    <tr>
+      <th>60</th>
+      <th>Wolf</th>
+      <td>8</td>
+      <td>$3.54</td>
+      <td>$28.32</td>
+    </tr>
+    <tr>
+      <th>179</th>
+      <th>Wolf, Promise of the Moonwalker</th>
+      <td>6</td>
+      <td>$4.48</td>
+      <td>$26.88</td>
+    </tr>
+    <tr>
+      <th>160</th>
+      <th>Azurewrath</th>
+      <td>6</td>
+      <td>$4.40</td>
+      <td>$26.40</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <th>Hero Cane</th>
+      <td>6</td>
+      <td>$4.35</td>
+      <td>$26.10</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <th>Shadow Strike, Glory of Ending Hope</th>
+      <td>8</td>
+      <td>$3.16</td>
+      <td>$25.28</td>
+    </tr>
+    <tr>
+      <th>139</th>
+      <th>Mercy, Katana of Dismay</th>
+      <td>5</td>
+      <td>$4.94</td>
+      <td>$24.70</td>
+    </tr>
+    <tr>
+      <th>128</th>
+      <th>Blazeguard, Reach of Eternity</th>
+      <td>5</td>
+      <td>$4.91</td>
+      <td>$24.55</td>
+    </tr>
+    <tr>
+      <th>138</th>
+      <th>Peacekeeper, Wit of Dark Magic</th>
+      <td>5</td>
+      <td>$4.74</td>
+      <td>$23.70</td>
+    </tr>
+    <tr>
+      <th>141</th>
+      <th>Persuasion</th>
+      <td>7</td>
+      <td>$3.19</td>
+      <td>$22.33</td>
+    </tr>
+    <tr>
+      <th>87</th>
+      <th>Deluge, Edge of the West</th>
+      <td>5</td>
+      <td>$4.43</td>
+      <td>$22.15</td>
+    </tr>
+    <tr>
+      <th>159</th>
+      <th>Oathbreaker, Spellblade of Trials</th>
+      <td>7</td>
+      <td>$3.08</td>
+      <td>$21.56</td>
+    </tr>
+    <tr>
+      <th>136</th>
+      <th>Ghastly Adamantite Protector</th>
+      <td>6</td>
+      <td>$3.58</td>
+      <td>$21.48</td>
+    </tr>
+    <tr>
+      <th>65</th>
+      <th>Conqueror Adamantite Mace</th>
+      <td>5</td>
+      <td>$4.24</td>
+      <td>$21.20</td>
+    </tr>
+    <tr>
+      <th>101</th>
+      <th>Final Critic</th>
+      <td>5</td>
+      <td>$4.19</td>
+      <td>$20.95</td>
+    </tr>
+    <tr>
+      <th>102</th>
+      <th>Avenger</th>
+      <td>6</td>
+      <td>$3.44</td>
+      <td>$20.64</td>
+    </tr>
+    <tr>
+      <th>133</th>
+      <th>Faith's Scimitar</th>
+      <td>5</td>
+      <td>$4.09</td>
+      <td>$20.45</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+# Results of Analysis
+
+This dataset was comprised of 780 purchases made by 576 unique players. Of the 576 players, 84% identified as male, 14% as female and 2% were other or non-disclosed. (Gender Demographics)
+
+When reviewing purchases by gender it can be observed that while purchase counts were proportionate to the share of the population(84% male, 14% female and 2% other), females and non-disclosed players tended to purchase higher priced items and have a higher average purchase per player than the male players. (Purchasing Analysis(Gender))
+
+The peak age demographic for Heroes of Pymoli is 15-29 with ages 20-24 representing approximately 45% of players and revenue and ages 15-29 representing approximately 75%. (Age Demographics and Purchasing Analysis)
+
+A review of top spenders shows that no single player spent over $20 within this dataset. (Top Spenders)
+
+# Conclusions
+
+This analysis suggests that a key part of revenue generation is having a wide range of players and items available to purchase. This is because players are not found to spend a great deal of money individually. Recruitment of new players should be focused on males aged 15-29 but in a way designed not to exclude females from becoming interested. While males are more likely have a larger total purchase, females appear to be drawn to higher priced items which can drive profitability.
+
+Below is a list of item IDs that intersected in the most profitable and most popular items, these items should be studied by the designers when creating new products.
+
+(178, 145, 108, 82, 19, 103, 75, 72, 60, 59, 53, 117, 85, 102)
+
+
