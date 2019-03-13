@@ -14,13 +14,15 @@ The Pandas library was used to merge, parse and aggregate the data and visualiza
 
 A bubble plot was created to show the relationship between the following four variables: average fare per city, total rides per city, total drivers in each city and city types. This was achieved by grouping by city and filtering by city type and setting the size by the driver count. Driver counts were pulled from the city data before it was combined to avoid counting drivers more than once.
 
-![ridesharing]:(Output/ridesharing.png)
+![ridesharing](Output/ridesharing.png)
 
 Bar charts were then created to show the share per city type of total fares, revenue from fares and number of drivers
 
-![faresbytype]:(Output/faresbytype.png)
-![ridesbytype]:(Output/ridesbytype.png)
-![driversbytype]:(Output/driversbytype.png)
+![faresbytype](Output/faresbytype.png)
+
+![ridesbytype](Output/ridesbytype.png)
+
+![driversbytype](Output/driversbytype.png)
 
 # Results of Analysis
 
