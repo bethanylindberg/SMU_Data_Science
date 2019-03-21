@@ -33,11 +33,11 @@ For the purpose of this analysis, latitude will serve as the independent variabl
 
 
 ## Latitude vs. Cloudiness
-![latvcloud](Output/latvtemp.png)
+![latvcloud](Output/latvcloud.png)
 
 
 ## Latitude vs. Wind Speed
-![latvwind](Output/latvtemp.png)
+![latvwind](Output/latvwind.png)
 
 
 ### Finally, the cities found through the API call visualized on a map
