@@ -78,6 +78,21 @@ SET first_name = "GROUCHO"
 WHERE first_name = "HARPO" AND last_name = "WILLIAMS"
 ;
 #5a. You cannot locate the schema of the address table. Which query would you use to re-create it?
+DESCRIBE sakila.address;
+SHOW CREATE TABLE address; CREATE TABLE IF NOT EXISTS 
+address (address_id smallint(5) unsigned NOT NULL AUTO_INCREMENT, 
+		address varchar(50) NOT NULL, 
+		address2 varchar(50) DEFAULT NULL, 
+        district varchar(20) NOT NULL, 
+        city_id smallint(5) unsigned NOT NULL, 
+        postal_code varchar(10) DEFAULT NULL, 
+        phone varchar(20) NOT NULL, 
+        location geometry NOT NULL, 
+        last_update timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, 
+        PRIMARY KEY (address_id), KEY idx_fk_city_id (city_id), 
+        SPATIAL KEY idx_location (location), 
+		CONSTRAINT fk_address_city FOREIGN KEY (city_id) REFERENCES city (city_id) ON UPDATE CASCADE ) 
+        ENGINE=InnoDB AUTO_INCREMENT=606 DEFAULT CHARSET=utf8;
 #6a. Use JOIN to display the first and last names, as well as the address, of each staff member. Use the tables staff and address:
 SELECT s.first_name,s.last_name,a.address
 FROM staff s
@@ -145,7 +160,7 @@ WHERE
 ;
 #7c. You want to run an email marketing campaign in Canada, for which you will need the names and email addresses of all 
 #Canadian customers. Use joins to retrieve this information.
-SELECT c.first_name,c.last_name,c.email,country.country
+SELECT c.first_name,c.last_name,c.email
 FROM customer c
 JOIN address a
 	ON c.address_id = a.address_id
@@ -157,7 +172,7 @@ WHERE country.country = "Canada"
 ;
 #7d. Sales have been lagging among young families, and you wish to target all family movies for a promotion. 
 #Identify all movies categorized as family films.
-SELECT f.title,c.name
+SELECT f.title
 FROM film f
 JOIN film_category fc
 	ON f.film_id = fc.film_id
