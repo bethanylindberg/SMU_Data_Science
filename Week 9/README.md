@@ -18,6 +18,7 @@ Primary key: film_id
 Foreign key: language_id
 
 [Click here to view the sakila documentation on MySQL.com](https://dev.mysql.com/doc/sakila/en/)
+
 ## Limitations
 Because this database features sample data some of the data is in a rather contrived format. This can be demonstrated with the below query. In a real life scenario it would be unlikely to observe 182 rentals recorded at the exact same moment. Because of the limitations of the rental dates the ability to do a robust time series analysis on rentals is not possible.
 ![script1](Images/script1.PNG)
@@ -28,6 +29,7 @@ This is just an example of how this sample database will not behave exactly like
 
 # Methodology
 The use command is first executed to access the tables in the sakila database.
+
 ### Example 1
 The first few practice questions are simple SELCT FROM statements with one CONCAT, UPPER & IFNULL example.
 
@@ -55,86 +57,113 @@ The final few questions are an example of a fairly complicated JOIN, GROUP BY, O
 # Results
 ### Example 1
 First and last names from actor table.
+
 ![result1a](Images/result1a.PNG)
 
 First and last names from actor table put into one column and named “Actor Name.”
+
 ![result1b](Images/result1b.PNG)
 
 ### Example 2
 Results from actor table with first name Joe.
+
 ![result2a](Images/result2a.PNG)
 
 Actor ID, first name and last name from actor table for actors with GEN in their last name.
+
 ![result2b](Images/result2b.PNG)
 
 Actor ID, first name and last name from actor table for actors with LI in their last name; the result is sorted alphabetically.
+
 ![result2c](Images/result2c.PNG)
 
 Country ID and country name results from the country table for the countries Afghanistan, Bangladesh, and China.
+
 ![result2d](Images/result2d.PNG)
 
 ### Example 3
 This group does not have a result table, so the action output is shown instead.
+
 ![result3ab](Images/result3ab.PNG)
 
 ### Example 4
 Last name from actor table with count of actors with each name.
+
 ![result4a](Images/result4a.PNG)
 
 Same as prior example, but only including last names that are shared by at least two actors.
+
 ![result4b](Images/result4b.PNG)
 
 Action output for updating values in a table is shown below.
+
 ![result4cd](Images/result4cd.PNG)
 
 ### Example 5
 Describe result for address table is below.
+
 ![result5a](Images/result5a.PNG)
 
 ### Example 6
 First name, last name and addresses of staff members, taken from staff and address tables.
+
 ![result6a](Images/result6a.PNG)
 
 Revenue by staff member, taken from staff and payment tables.
+
 ![result6b](Images/result6b.PNG)
 
 Number of actors that appear in each movie, taken from film and film_actor tables.
+
 ![result6c](Images/result6c.PNG)
 
 Copies of  film “Hunchback Impossible” in inventory, taken from film and inventory tables.
+
 ![result6d](Images/result6d.PNG)
 
 Amount paid by each customer, sorted alphabetically by last name, taken from customer and payment tables.
+
 ![result6e](Images/result6e.PNG)
 
 ### Example 7
 Films in English that begin with the letter K or Q, taken from film and language tables.
+
 ![result7a](Images/result7a.PNG)
 
 Actors that appear in the film “Alone Trip”, taken from actor, film_actor and film tables.
+
 ![result7b](Images/result7b.PNG)
 
 First name, last name and email address of customers located in Canada, taken from customer, address, city and country tables.
+
 ![result7c](Images/result7c.PNG)
 
 Films in the family category, taken from the film, film_category and category tables.
+
 ![result7d](Images/result7d.PNG)
 
-Most frequently rented films in descending order, both the top and bottom of result. Information retrieved from film, inventory and rental tables.
+Most frequently rented films in descending order, both the top and bottom of result. Information retrieved from film, inventory
+and rental tables.
+
 ![result7e](Images/result7e.PNG)
+
 ![result7e2](Images/result7e2.PNG)
 
 Revenue per store, taken from store, inventory, rental and payment tables.
+
 ![result7f](Images/result7f.PNG)
 
 Store ID, city and country for each store, taken from the store, address, city and country tables.
+
 ![result7g](Images/result7g.PNG)
 
 ### Example 8
 Top five genres by revenue, taken from category, film_category, inventory, rental and payment tables.
+
 ![result7h](Images/result7h.PNG)
 
 Action output for saving and deleting view is shown below
+
 ![result8](Images/result8.PNG)
 
 # Conclusions
