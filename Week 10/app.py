@@ -6,19 +6,7 @@ from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
 from flask import Flask, jsonify
 
-def calc_temps(start_date, end_date):
-    """TMIN, TAVG, and TMAX for a list of dates.
-    
-    Args:
-        start_date (string): A date string in the format %Y-%m-%d
-        end_date (string): A date string in the format %Y-%m-%d
-        
-    Returns:
-        TMIN, TAVE, and TMAX
-    """
-    
-    return session.query(func.min(Measurement.tobs), func.avg(Measurement.tobs), func.max(Measurement.tobs)).\
-        filter(Measurement.date >= start_date).filter(Measurement.date <= end_date).all()
+
 
 #################################################
 # Database Setup
@@ -33,6 +21,8 @@ Base.prepare(engine, reflect=True)
 # Save references to each table
 Measurement = Base.classes.measurement
 Station = Base.classes.station
+sel = [func.min(Measurement.tobs), func.avg(Measurement.tobs), func.max(Measurement.tobs)]
+
 # Create our session (link) from Python to the DB
 session = Session(engine)
 # Calculate the date 1 year ago from the last data point in the database
@@ -120,9 +110,20 @@ def start(start):
     # Stip off the year and save a list of %m-%d strings
     md = [x[5:10] for x in daterange]
     # Loop through the list of %m-%d strings and calculate the normals for each date
-    normals = [calc_temps(x)[0] for x in md]
+    normals = [session.query(*sel).filter(func.strftime("%m-%d", Measurement.date) == x).all()[0] for x in md]
+    normlist = []
+    y = 0
+    for _ in normals:
+        normdictouter = {}
+        normdictinner = {}
+        normdictouter[daterange[y]] = normdictinner
+        normdictinner["minimum temperature"] = normals[y][0]
+        normdictinner["average temperature"] = normals[y][1]
+        normdictinner["max temperature"] = normals[y][2]
+        y +=1
+        normlist.append(normdictouter)
+    return jsonify(normlist)
 
-    return jsonify(normals)
 @app.route("/api/v1.0/<start>/<end>")
 def startend(start,end):
     """Return a JSON list of the minimum temperature, the average temperature, and the max temperature for a given start:
@@ -139,9 +140,19 @@ def startend(start,end):
     # Stip off the year and save a list of %m-%d strings
     md = [x[5:10] for x in daterange]
     # Loop through the list of %m-%d strings and calculate the normals for each date
-    normals = [calc_temps(x)[0] for x in md]
-
-    return jsonify(normals)
+    normals = [session.query(*sel).filter(func.strftime("%m-%d", Measurement.date) == x).all()[0] for x in md]
+    normlist = []
+    y = 0
+    for _ in normals:
+        normdictouter = {}
+        normdictinner = {}
+        normdictouter[daterange[y]] = normdictinner
+        normdictinner["minimum temperature"] = normals[y][0]
+        normdictinner["average temperature"] = normals[y][1]
+        normdictinner["max temperature"] = normals[y][2]
+        y +=1
+        normlist.append(normdictouter)
+    return jsonify(normlist )
 
 if __name__ == '__main__':
     app.run(debug=True)
