@@ -6,8 +6,6 @@ from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
 from flask import Flask, jsonify
 
-
-
 #################################################
 # Database Setup
 #################################################
@@ -33,7 +31,6 @@ query_date = str(dt.date(int(last_date[0:4]),int(last_date[5:7]),int(last_date[8
 # Flask Setup
 #################################################
 app = Flask(__name__)
-
 #################################################
 # Flask Routes
 #################################################
@@ -49,7 +46,6 @@ def welcome():
         f"/api/v1.0/yyyy-mm-dd<br/>"
         f"/api/v1.0/api/v1.0/yyyy-mm-dd/yyyy-mm-dd"
     )
-
 
 @app.route("/api/v1.0/precipitation")
 def precipitation():
@@ -97,62 +93,31 @@ def tobs():
 @app.route("/api/v1.0/<start>")
 def start(start):
 #     """Return a JSON list of the minimum temperature, the average temperature, and the max temperature for a given start:
-#     calculate TMIN, TAVG, and TMAX for all dates greater than and equal to the start date supplied by the user, or a 404 if not date is not in db."""
+#     calculate TMIN, TAVG, and TMAX for all dates greater than and equal to the start date supplied by the user"""
+
     # Create our session (link) from Python to the DB
     session = Session(engine)
-    start = str(start)
-    end = last_date
+    start_date = str(start)
+    end_date = last_date
+    
+    results = session.query(*sel).filter(Measurement.date >= start_date, Measurement.date <= end_date).all()[0]
+    startdict = {"TMIN":results[0],"TAVG":results[1],"TMAX":results[2]}
 
-    d1 = dt.date(int(start[0:4]),int(start[5:7]),int(start[8:10]))
-    d2 = dt.date(int(end[0:4]),int(end[5:7]),int(end[8:10]))
-    # Use the start and end date to create a range of dates
-    daterange = [str(d1 + dt.timedelta(days=x)) for x in range((d2-d1).days + 1)]
-    # Stip off the year and save a list of %m-%d strings
-    md = [x[5:10] for x in daterange]
-    # Loop through the list of %m-%d strings and calculate the normals for each date
-    normals = [session.query(*sel).filter(func.strftime("%m-%d", Measurement.date) == x).all()[0] for x in md]
-    normlist = []
-    y = 0
-    for _ in normals:
-        normdictouter = {}
-        normdictinner = {}
-        normdictouter[daterange[y]] = normdictinner
-        normdictinner["minimum temperature"] = normals[y][0]
-        normdictinner["average temperature"] = normals[y][1]
-        normdictinner["max temperature"] = normals[y][2]
-        y +=1
-        normlist.append(normdictouter)
-    return jsonify(normlist)
+    return jsonify(startdict )
 
 @app.route("/api/v1.0/<start>/<end>")
 def startend(start,end):
     """Return a JSON list of the minimum temperature, the average temperature, and the max temperature for a given start:
-    calculate TMIN, TAVG, and TMAX for all dates between the start and end date provided by user inclusive, or a 404 if not date is not in db."""
+    calculate TMIN, TAVG, and TMAX for all dates between the start and end date provided by user inclusive"""
     # Create our session (link) from Python to the DB
     session = Session(engine)
-    start = str(start)
-    end = str(end)
+    start_date = str(start)
+    end_date = str(end)
+    
+    results = session.query(*sel).filter(Measurement.date >= start_date, Measurement.date <= end_date).all()[0]
+    startdict = {"TMIN":results[0],"TAVG":results[1],"TMAX":results[2]}
 
-    d1 = dt.date(int(start[0:4]),int(start[5:7]),int(start[8:10]))
-    d2 = dt.date(int(end[0:4]),int(end[5:7]),int(end[8:10]))
-    # Use the start and end date to create a range of dates
-    daterange = [str(d1 + dt.timedelta(days=x)) for x in range((d2-d1).days + 1)]
-    # Stip off the year and save a list of %m-%d strings
-    md = [x[5:10] for x in daterange]
-    # Loop through the list of %m-%d strings and calculate the normals for each date
-    normals = [session.query(*sel).filter(func.strftime("%m-%d", Measurement.date) == x).all()[0] for x in md]
-    normlist = []
-    y = 0
-    for _ in normals:
-        normdictouter = {}
-        normdictinner = {}
-        normdictouter[daterange[y]] = normdictinner
-        normdictinner["minimum temperature"] = normals[y][0]
-        normdictinner["average temperature"] = normals[y][1]
-        normdictinner["max temperature"] = normals[y][2]
-        y +=1
-        normlist.append(normdictouter)
-    return jsonify(normlist )
+    return jsonify(startdict )
 
 if __name__ == '__main__':
     app.run(debug=True)
