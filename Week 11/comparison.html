@@ -22,7 +22,7 @@
                   Plots
                 </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="max_temperature.html">Max Temperature</a>
+                <a class="dropdown-item" href="temperature.html">Max Temperature</a>
                 <a class="dropdown-item" href="humidity.html">Humidity</a>
                 <a class="dropdown-item" href="cloudiness.html">Cloudiness</a>
                 <a class="dropdown-item" href="wind_speed.html">Wind Speed</a>
@@ -73,9 +73,16 @@
             <!--Second of Two Columns-->
           <div class="col-5">
               <div class="jumbotron">
-              <h1>Results of Analysis</h1>
+              <h1>Analysis</h1>
               <hr class="my-4">
-                <p><strong>Results of Analysis</strong>
+                <p><strong>Methods</strong>
+                  <br>
+                  The Numpy random function was used to generate a list of coordinates which was run through the citypy library to find the nearest city. 
+                  A nested for loop was used to retrieve data from open weather map API and loaded into a pandas DataFrame, while the time module sleep 
+                  function handled the run time to control for maximum allowable calls from the API.After some minor formatting of the DataFrame, 
+                  visualizations were created with matplotlib and gmaps was used to show the locations of the visualized cities.
+                  <br>
+                  <strong>Results of Analysis</strong>
                   <br>
                     Temperatures increase closer to the equator (0 latitude) with a sharp decline around 60 latitude and 
                     more disparate temperatures 40-60 latitude.
