@@ -3619,13 +3619,14 @@ input[type="submit"].btn-block,input[type="reset"].btn-block,input[type="button"
 }
 .navbar-brand{
     display:inline-block;
-    padding-top:0.3125rem;
-    padding-bottom:0.3125rem;
-    margin-right:1rem;
-    font-size:1.25rem;
+    padding-top:1rem;
+    padding-bottom:1rem;
+    margin-right:2rem;
+    font-size:2rem;
     line-height:inherit;
     white-space:nowrap;
-    color:#d6d6d6;
+    background-color:#d1e3ff;
+
 }
 .navbar-brand:hover,.navbar-brand:focus{
     text-decoration:none

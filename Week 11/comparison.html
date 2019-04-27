@@ -22,7 +22,7 @@
                   Plots
                 </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="temperature.html">Max Temperature</a>
+                <a class="dropdown-item" href="max_temperature.html">Max Temperature</a>
                 <a class="dropdown-item" href="humidity.html">Humidity</a>
                 <a class="dropdown-item" href="cloudiness.html">Cloudiness</a>
                 <a class="dropdown-item" href="wind_speed.html">Wind Speed</a>
@@ -45,35 +45,7 @@
           <!--First of Two Columns-->
           <div class="col-5">
               <div class="jumbotron">
-              <h1>Summary: Map of Cities</h1>
-              <hr class="my-4">
-              <p>This project will show worldwide weather patterns visually based on geo coordinates. 
-                This category of data analysis in conjunction with other worldwide trends such as spending 
-                habits or crime rates may reveal many interesting and useful insights into the world we live in.
-                
-                <br>
-                <strong>Overview of the Data</strong>
-                <br>
-                Open weather map API was used to retrieve weather data for a list of 500+ cities. 
-                Information gathered included maximum temperature,humidity, cloudiness and wind speed.
-                
-                <br>
-                <strong>Limitations of the Data</strong>
-                <br>
-                Several iterations of the calls resulted in extreme outliers which upon closer 
-                inspection were not correct at the time the call was made. For example, one instance listed Parrita, 
-                Costa Rica as having a wind speed of 122 mph when the actual wind speed at the time was 7 mph. This is 
-                most likely a glitch existing on the open weather app. The x and y limitations of the scatter plots 
-                were adjusted to compensate where necessary. Because this analysis was done using city names and not 
-                coordinates there are large gaps in the data resulting from unpopulated areas not being included. 
-                This is most easily understood by viewing the gmap below.</p>
-                <img src="assets\map.png" alt="map">
-              </div>
-          </div>
-          <!--Second of Two Columns-->
-          <div class="col-5">
-              <div class="jumbotron">
-              <h2>Visualizations</h2>
+              <h1>All Visualizations</h1>
               <hr class="my-4">
                 <a target="_blank" href="temperature.html">
                 <img src="assets\latvtemp.png" alt="Temperature">
@@ -82,6 +54,8 @@
                 <a target="_blank" href="cloudiness.html">
                 <img src="assets\latvcloud.png" alt="Cloudiness">
                 </a>
+
+                <br>
 
 
                 <a target="_blank" href="humidity.html">
@@ -92,8 +66,29 @@
                 <img src="assets\latvwind.png" alt="Wind Speed">
                 </a>  
 
+               
+
               </div>
             </div>
+            <!--Second of Two Columns-->
+          <div class="col-5">
+              <div class="jumbotron">
+              <h1>Results of Analysis</h1>
+              <hr class="my-4">
+                <p><strong>Results of Analysis</strong>
+                  <br>
+                    Temperatures increase closer to the equator (0 latitude) with a sharp decline around 60 latitude and 
+                    more disparate temperatures 40-60 latitude.
+                 
+                    Cloudiness and humidity do not have any observable trends between different latitudes.
+                    
+                    Wind speed also does not have a clear pattern based on latitude, though it appears that the highest 
+                    speeds are the farthest south and farthest north. While this phenomenon is observed through several iterations, 
+                    it is not necessarily experienced every time the data is pulled from the API.</p>
+
+              </div>
+            </div>
+
         </div>
       </dv>
     <!-- Optional JavaScript -->
