@@ -4,8 +4,6 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="style.css">
 
     <title>Latitude</title>
@@ -30,13 +28,79 @@
                 <a class="dropdown-item" href="wind_speed.html">Wind Speed</a>
               </div>
           <li class="nav-item active">
-            <a class="nav-link" href="comparison.html">Comparison <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="comparison.html">Comparison</a>
           </li>
           <li class="nav-item active">
-              <a class="nav-link" href="data.html">Data <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="data.htm">Data</a>
             </li>
       </div>
     </nav>
+  
+    <!-- Creates the Overall Grid -->
+    <div class="container-fluid">
+  
+      <!-- First Row -->
+      <div class="row justify-content-center">
+
+          <!--First of Two Columns-->
+          <div class="col-5">
+              <div class="jumbotron">
+              <h1>Summary: Map of Cities</h1>
+              <hr class="my-4">
+              <p>This project will show worldwide weather patterns visually based on geo coordinates. This category of data analysis in conjunction with 
+                <br>
+                other worldwide trends such as spending habits or crime rates may reveal many interesting and useful insights into the world we live in.
+                <br>
+                <strong>Overview of the Data</strong>
+                <br>
+                Open weather map API was used to retrieve weather data for a list of 500+ cities. Information gathered included maximum temperature,
+                <br> 
+                humidity, cloudiness and wind speed.
+                <br>
+                <strong>Limitations of the Data</strong>
+                <br>
+                Several iterations of the calls resulted in extreme outliers which upon closer inspection were not correct at the time the call was made.
+                <br>
+                For example, one instance listed Parrita, Costa Rica as having a wind speed of 122 mph when the actual wind speed at the time was 
+                <br>
+                7 mph.
+                <br>
+                This is most likely a glitch existing on the open weather app. The x and y limitations of the scatter plots were adjusted to compensate 
+                <br>
+                where necessary.
+                <br>
+                Because this analysis was done using city names and not coordinates there are large gaps in the data resulting from unpopulated 
+                <br>
+                areas not being included. This is most easily understood by viewing the gmap below.</p>
+                <img src="assets\map.png" alt="map">
+              </div>
+          </div>
+          <!--Second of Two Columns-->
+          <div class="col-5">
+              <div class="jumbotron">
+              <h1>Visualizations</h1>
+              <hr class="my-4">
+                <a target="_blank" href="temperature.html">
+                <img src="assets\latvtemp.png" alt="Temperature">
+                </a>
+
+                <a target="_blank" href="cloudiness.html">
+                <img src="assets\latvcloud.png" alt="Cloudiness">
+                </a>
+
+
+                <a target="_blank" href="humidity.html">
+                <img src="assets\latvhumd.png" alt="Humidity">
+                </a>
+
+                <a target="_blank" href="wind_speed.html">
+                <img src="assets\latvwind.png" alt="Wind Speed">
+                </a>  
+
+              </div>
+            </div>
+        </div>
+      </dv>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
