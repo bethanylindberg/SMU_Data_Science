@@ -3686,6 +3686,11 @@ input[type="submit"].btn-block,input[type="reset"].btn-block,input[type="button"
     background:no-repeat center center;
     background-size:100% 100%
 }
+
+.visualizations{
+    width:50%;
+    height:50%
+}
 @media (max-width: 575.98px){
     .navbar-expand-sm>.container,.navbar-expand-sm>.container-fluid{
         padding-right:0;
