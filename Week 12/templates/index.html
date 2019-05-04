@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Latest Mars News</title>
+  <title>Mission to Mars</title>
   <link rel="stylesheet" href="..\static\css\bootstrap.css" media="screen">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="..\static\css\bootstrap.min.css">
@@ -18,13 +18,15 @@
   <div class="container-fluid">
     <div class="jumbotron text-center">
       <h1>Mission to Mars</h1>
+      <hr>
       <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data!</a></p>
     </div>
   </div>
 
   <div class="container-fluid">
-    <div class="jumbotron text-center">
+    <div class="jumbotron text-left">
   <h2>Latest Mars News</h2>
+  <hr>
   <h2>{{ data.article }}</h2>
   <p>{{ data.news_p }}</p>
   </div> 
@@ -35,18 +37,22 @@
     <div class="jumbotron text-center">
       <div class="row">
       <div class="col-sm-8">
+          <h2>Mission to Mars</h2>
+          <hr>
         <img src="{{ data.featured_image_url }}" alt="Featured Mars Image" width=100%>
       </div>
     <div class="col-sm-4"> 
       <div class="card border-secondary mb-3" style="max-width: 60rem;">
           <div class="card-body">
             <h4 class="card-title">Current Weather on Mars</h4>
+            <hr>
             <p class="card-text">{{ data.mars_weather }}</p>
           </div>
         </div>
-        <div class="card border-secondary mb-3" style="max-width: 25rem;">
+        <div class="card border-secondary mb-3" style="max-width: 28rem;">
           <div class="card-body">
             <h4 class="card-title">Mars Facts</h4>
+            <hr>
             <p class="card-text">{{ data.marsfacts | safe}}</p>
           </div>
         </div>
@@ -57,7 +63,7 @@
 
   <div class="container-fluid">
     <div class="jumbotron text-center">
-      <h1>Mars Hemispheres</h1>
+      <h2>Mars Hemispheres</h2>
       <hr>
       <div class="row" >
     
