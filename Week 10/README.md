@@ -7,16 +7,25 @@ This project uses historical weather data for Hawaii to build an app that is use
  The data used for this project includes a CSV file with a list of stations and a list of measurements.
  
  Measurement parameters includes:
+ 
  station: Identifing number of the station
+ 
  date: Date of recording
+ 
  prcp: A measurement of precipitation taken by the station
+ 
  tobs: A measurement of temperature taken by the station
  
  Station parameters includes:
+ 
  station: Identifing number of the station ex:USC00519397
+ 
  name: Name of the station ex: WAIKIKI 717.2, HI US
+ 
  latitude: latitude of station
+ 
  longitude: longitude of station
+ 
  elevation: elevation of station 
 
 ## Limitations of the Data
@@ -31,9 +40,9 @@ The data is stored using SQLite, queried using SQLAlchemy and written into a del
 
 To prepare the queries for the app as well as to better understand the data, the below analysis was conducted.
 
-Using the last date in the available data, the last twelve months of data in the database is queried, placed into a pandas dataframe and plotted in a bar chart using matplotlib.
+Using the last date in the available data, the last twelve months of data in the database is queried, placed into a pandas dataframe and plotted in a bar chart using matplotlib to show total daily precipitation.
 
-## Temperature over last year of data
+## Daily Precipitation over last year of data
 ![temp](Output/temp.png)
 
 Using the station with the most observations in the last twelve months of the data, temperatures are queried and plotted into a histogram.

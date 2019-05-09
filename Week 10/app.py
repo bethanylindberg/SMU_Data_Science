@@ -63,22 +63,24 @@ def precipitation():
 
 @app.route("/api/v1.0/stations")
 def stations():
-    """Return a list of stations from the db"""
+    """Return a dictionary of stations from the db"""
     # Create our session (link) from Python to the DB
     session = Session(engine)
     results = session.query(Station.station,Station.name,Station.latitude,Station.longitude,Station.elevation).\
                                 group_by(Station.station).all()
     y=0
-    normlist=[]
+    stationlist=[]
     for _ in results:
-       normdictouter = {}
-       normdictinner = {}
-       normdictouter[station] = normdictinner
-       normdictinner["Station Name"] = results[y][1]
-       normdictinner["Station Latitude"] = results[y][2]
-       normdictinner["Station Longitude"] = results[y][3]
-       y +=1
-       normlist.append(normdictouter)
+        stationdictouter = {}
+        stationdictinner = {}
+        stationdictouter[results[y][0]] = stationdictinner
+        stationdictinner["Station Name"] = results[y][1]
+        stationdictinner["Station Latitude"] = results[y][2]
+        stationdictinner["Station Longitude"] = results[y][3]
+        y +=1
+        stationlist.append(stationdictouter)
+
+    return jsonify(stationlist)
 
 @app.route("/api/v1.0/tobs")
 def tobs():
