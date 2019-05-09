@@ -4,7 +4,8 @@ This project uses historical weather data for Hawaii to build an app that is use
 
 # Overview of the Data
 
- The data used for this project includes a CSV file with a list of stations and a list of measurements.
+ The data used for this project includes a CSV file with a list of stations and a CSV file with a list of measurements.
+ 
  
  Measurement parameters includes:
  
@@ -16,34 +17,35 @@ This project uses historical weather data for Hawaii to build an app that is use
  
  tobs: A measurement of temperature taken by the station
  
+ 
  Station parameters includes:
  
  station: Identifing number of the station ex:USC00519397
  
  name: Name of the station ex: WAIKIKI 717.2, HI US
  
- latitude: latitude of station
+ latitude: Latitude of station
  
- longitude: longitude of station
+ longitude: Longitude of station
  
- elevation: elevation of station 
+ elevation: Elevation of station 
 
 ## Limitations of the Data
 
-That data contained in the csv files is dated from January 1, 2010 to August 23, 2017 so at the time of this writing is missing almost two years of weather data. Because global temperatures have been observed to have an upward trend, any query based on normalized temperature for a particular can be expected to be lower than what will actually occur.
+That data contained in the CSV files is dated from January 1, 2010 to August 23, 2017 so at the time of this writing is missing almost two years of weather data. Because global temperatures have been observed to have an upward trend, any query based on an aggregated temperature for a particular date can be expected to be lower than what will actually occur.
 
 # Methods
 
-The data is stored using SQLite, queried using SQLAlchemy and written into a delployable app using flask.
+The data is stored using SQLite, queried using SQLAlchemy and written into a deployable app using flask. Jupyter notebooks, pandas and matplotlib is used to examine and visualize the data
 
 # Analysis
 
 To prepare the queries for the app as well as to better understand the data, the below analysis was conducted.
 
-Using the last date in the available data, the last twelve months of data in the database is queried, placed into a pandas dataframe and plotted in a bar chart using matplotlib to show total daily precipitation.
+Using the last date in the available data, the last twelve months of data in the database is queried, placed into a DataFrame and plotted in a bar chart to show total daily precipitation.
 
 ## Daily Precipitation over last year of data
-![temp](Output/temp.png)
+![prcp](Output/prcp.png)
 
 Using the station with the most observations in the last twelve months of the data, temperatures are queried and plotted into a histogram.
 
@@ -83,6 +85,8 @@ Returns a JSON list of Temperature Observations (tobs) from a year from the last
 /api/v1.0/<start> and /api/v1.0/<start>/<end>
 
 Returns a JSON list of the minimum temperature, the average temperature, and the max temperature for a given start or start-end range.
+
 When given the start only, calculate TMIN, TAVG, and TMAX for all dates greater than and equal to the start date.
+
 When given the start and the end date, calculate the TMIN, TAVG, and TMAX for dates between the start and end date inclusive.
 
