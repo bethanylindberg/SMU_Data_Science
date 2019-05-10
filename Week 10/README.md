@@ -82,7 +82,7 @@ Returns a JSON list of stations from the dataset.
 
 Returns a JSON list of Temperature Observations (tobs) from a year from the last data point.
 
-/api/v1.0/<start> and /api/v1.0/<start>/<end>
+/api/v1.0/YYYY-MM-DD and /api/v1.0/YYYY-MM-DD/YYYY-MM-DD
 
 Returns a JSON list of the minimum temperature, the average temperature, and the max temperature for a given start or start-end range.
 
