@@ -38,6 +38,11 @@ def scrape_data():
 
     # Scrape data
     relative_image_path = soup.find_all('img')[3]['src']
+    first_image_url = 'https://jpl.nasa.gov' + relative_image_path
+    
+    relative_image_path = soup.find_all('article',class_="carousel_item")[0]["style"]
+    relative_image_path = relative_image_path.replace("background-image: url('",'')
+    relative_image_path = relative_image_path.replace("');",'')
     featured_image_url = 'https://jpl.nasa.gov' + relative_image_path
     
     #Visit Mars Weather
@@ -98,6 +103,8 @@ def scrape_data():
         "article": article,
         "articleurl": articleurl,
         "news_p": news_p,
+        "nasa_img":nasa_img,
+        "first_image_url": first_image_url,
         "featured_image_url": featured_image_url,
         "mars_weather":mars_weather,
         "marsfacts":mars_facts,
@@ -108,4 +115,4 @@ def scrape_data():
     browser.quit()
 
     # Return results
-    return data  
+    return data

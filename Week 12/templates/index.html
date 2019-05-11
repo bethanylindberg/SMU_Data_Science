@@ -23,26 +23,25 @@
     </div>
   </div>
 
-  <div class="container-fluid">
-    <div class="jumbotron text-left">
-  <h2><strong>Latest Mars News</strong></h2>
-  <hr>
-  <h2>{{ data.article }}</h2>
-  <p>{{ data.news_p }} <br>
-  <a href="{{  data.articleurl  }}">Link to Article</a>
-  </p>
-
+<div class="container">
+  <div class="jumbotron text-center">
+      <h2><strong>Latest Mars News</strong></h2>
+      <hr>
+      <h2>{{ data.article }}</h2>
+      <p>{{ data.news_p }} <br>
+        <a href="{{  data.articleurl  }}"><img src="{{ data.nasa_img }}" alt="Article image">  </a>
+      </p>
   </div> 
 </div> 
 
 
-  <div class="container-fluid">
+  <div class="container">
     <div class="jumbotron text-center">
       <div class="row">
       <div class="col-sm-8">
           <h2><strong>Featured Mars Image</strong></h2>
           <hr>
-        <img src="{{ data.featured_image_url }}" alt="Featured Mars Image" width=100%>
+        <a href="{{  data.featured_image_url }}"><img src="{{ data.featured_image_url }}" alt="Featured Mars Image" width=100%></a>
       </div>
     <div class="col-sm-4"> 
 
@@ -68,7 +67,7 @@
   </div> 
 </div> 
 
-  <div class="container-fluid">
+  <div class="container">
     <div class="jumbotron text-center">
       <h2><strong>Mars Hemispheres</strong></h2>
       <hr>
