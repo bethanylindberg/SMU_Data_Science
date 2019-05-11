@@ -70,7 +70,7 @@ body {
   color: #777;
   text-align: left;
   background-color: #fff;
-  background-image: url("https://www.nasa.gov/sites/default/files/images/649694main_pia15417-43_full.jpg");
+  background-image: url(".\css\649694main_pia15417-43_full.jpg");
 }
 
 [tabindex="-1"]:focus {

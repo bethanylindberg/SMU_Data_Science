@@ -24,13 +24,19 @@
   </div>
 
 <div class="container">
-  <div class="jumbotron text-center">
+  <div class="jumbotron text-left">
+    <div class="row">
+    <div class="col-sm-8">
       <h2><strong>Latest Mars News</strong></h2>
       <hr>
       <h2>{{ data.article }}</h2>
       <p>{{ data.news_p }} <br>
-        <a href="{{  data.articleurl  }}"><img src="{{ data.nasa_img }}" alt="Article image">  </a>
+    </div>
+    <div class="col-sm-4">
+      <a href="{{  data.articleurl  }}"><img src="{{ data.nasa_img }}" alt="Article image">  </a>
       </p>
+    </div>
+  </div>
   </div> 
 </div> 
 
@@ -38,22 +44,25 @@
   <div class="container">
     <div class="jumbotron text-center">
       <div class="row">
+
       <div class="col-sm-8">
           <h2><strong>Featured Mars Image</strong></h2>
           <hr>
         <a href="{{  data.featured_image_url }}"><img src="{{ data.featured_image_url }}" alt="Featured Mars Image" width=100%></a>
       </div>
+
     <div class="col-sm-4"> 
 
-        <div class="col-sm-12"> 
-          <div class="card border-secondary mb-3" style="max-width: 60rem;">
-              <div class="card-body">
-                <h4 class="card-title">Current Weather on Mars</h4>
-                <hr>
-                <p class="card-text">{{ data.mars_weather }}</p>
-              </div>
+      <div class="col-sm-12"> 
+        <div class="card border-secondary mb-3" style="max-width: 60rem;">
+            <div class="card-body">
+              <h4 class="card-title">Current Weather on Mars</h4>
+              <hr>
+              <p class="card-text">{{ data.mars_weather }}</p>
             </div>
           </div>
+        </div>
+
         <div class="col-sm-12"> 
           <div class="card border-secondary mb-3" style="max-width: 28rem;">
             <div class="card-body">
@@ -62,7 +71,8 @@
             </div>
           </div>
         </div>
-      </div>  
+      </div>
+
     </div>  
   </div> 
 </div> 
