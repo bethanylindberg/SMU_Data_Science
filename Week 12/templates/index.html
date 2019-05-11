@@ -26,11 +26,11 @@
                   <h2><strong>Latest Mars News</strong></h2>
                   <hr>
                   <h2>{{ data.article }}</h2>
-                  <p>{{ data.news_p }} <br>
+                  <br>
+                  <p>{{ data.news_p }} </p>
                </div>
                <div class="col-sm-4">
-                  <a href="{{  data.articleurl  }}"><img src="{{ data.nasa_img }}" alt="Article image">  </a>
-                  </p>
+                  <a href="{{  data.articleurl  }}"><img src="{{ data.nasa_img }}" alt="Article image"></a>
                </div>
             </div>
          </div>
@@ -41,6 +41,7 @@
                <div class="col-sm-8">
                   <h2><strong>Featured Mars Image</strong></h2>
                   <hr>
+                  <br>
                   <a href="{{  data.featured_image_url }}"><img src="{{ data.featured_image_url }}" alt="Featured Mars Image" width=100%></a>
                </div>
                <div class="col-sm-4">
