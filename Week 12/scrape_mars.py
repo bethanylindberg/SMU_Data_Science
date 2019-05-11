@@ -22,8 +22,10 @@ def scrape_data():
     # Scrape data
     article = soup.find_all(class_="content_title")[0].text.strip()
     news_p = soup.find_all(class_="article_teaser_body")[0].text.strip()
+    relativearticleurl = soup.find_all("a")[35]["href"]
+    articleurl = 'https://mars.nasa.gov' + relativearticleurl
     relative_image_path = soup.find_all('img')[2]['src']
-    # nasa_img = 'https://mars.nasa.gov' + relative_image_path
+    nasa_img = 'https://mars.nasa.gov' + relative_image_path
     
     # Visit NASA images
     url = "https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars"
@@ -94,6 +96,7 @@ def scrape_data():
     # Store data in a dictionary
     data = {
         "article": article,
+        "articleurl": articleurl,
         "news_p": news_p,
         "featured_image_url": featured_image_url,
         "mars_weather":mars_weather,
@@ -105,4 +108,4 @@ def scrape_data():
     browser.quit()
 
     # Return results
-    return data    
+    return data  
