@@ -1,127 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Mission to Mars</title>
-  <link rel="stylesheet" href="..\static\css\bootstrap.css" media="screen">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="..\static\css\bootstrap.min.css">
-  
-  <script type="text/javascript" async="" src="https://ssl.google-analytics.com/ga.js"></script>
-  <meta charset="utf-8">
-</head>
-
-<body>
-  <div class="container-fluid">
-    <div class="jumbotron text-center">
-      <h1><strong>Mission to Mars</strong></h1>
-      <hr>
-      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data!</a></p>
-    </div>
-  </div>
-
-<div class="container">
-  <div class="jumbotron text-left">
-    <div class="row">
-    <div class="col-sm-8">
-      <h2><strong>Latest Mars News</strong></h2>
-      <hr>
-      <h2>{{ data.article }}</h2>
-      <p>{{ data.news_p }} <br>
-    </div>
-    <div class="col-sm-4">
-      <a href="{{  data.articleurl  }}"><img src="{{ data.nasa_img }}" alt="Article image">  </a>
-      </p>
-    </div>
-  </div>
-  </div> 
-</div> 
-
-
-  <div class="container">
-    <div class="jumbotron text-center">
-      <div class="row">
-
-      <div class="col-sm-8">
-          <h2><strong>Featured Mars Image</strong></h2>
-          <hr>
-        <a href="{{  data.featured_image_url }}"><img src="{{ data.featured_image_url }}" alt="Featured Mars Image" width=100%></a>
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Mission to Mars</title>
+      <link rel="stylesheet" href="..\static\css\bootstrap.css" media="screen">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link rel="stylesheet" href="..\static\css\bootstrap.min.css">
+      <script type="text/javascript" async="" src="https://ssl.google-analytics.com/ga.js"></script>
+      <meta charset="utf-8">
+   </head>
+   <body>
+      <div class="container-fluid">
+         <div class="jumbotron text-center">
+            <h1><strong>Mission to Mars</strong></h1>
+            <hr>
+            <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data!</a></p>
+         </div>
       </div>
-
-    <div class="col-sm-4"> 
-
-      <div class="col-sm-12"> 
-        <div class="card border-secondary mb-3" style="max-width: 60rem;">
-            <div class="card-body">
-              <h4 class="card-title">Current Weather on Mars</h4>
-              <hr>
-              <p class="card-text">{{ data.mars_weather }}</p>
+      <div class="container">
+         <div class="jumbotron text-left">
+            <div class="row">
+               <div class="col-sm-8">
+                  <h2><strong>Latest Mars News</strong></h2>
+                  <hr>
+                  <h2>{{ data.article }}</h2>
+                  <p>{{ data.news_p }} <br>
+               </div>
+               <div class="col-sm-4">
+                  <a href="{{  data.articleurl  }}"><img src="{{ data.nasa_img }}" alt="Article image">  </a>
+                  </p>
+               </div>
             </div>
-          </div>
-        </div>
-
-        <div class="col-sm-12"> 
-          <div class="card border-secondary mb-3" style="max-width: 28rem;">
-            <div class="card-body">
-              <h4 class="card-title">Mars Facts</h4>
-              <p class="card-text"></p>{{ data.marsfacts | safe}}</p>
-            </div>
-          </div>
-        </div>
+         </div>
       </div>
-
-    </div>  
-  </div> 
-</div> 
-
-  <div class="container">
-    <div class="jumbotron text-center">
-      <h2><strong>Mars Hemispheres</strong></h2>
-      <hr>
-      <div class="row" >
-    
-        <div class="col-sm-6">
-            <div class="card card-default">
-                <div class="card-block text-xs-center">
-                    <img src="{{ data['hemispheres_list'][0]['img'] }}" alt="1st Hemisphere" width=100%>
-                </div>
-                <div class="card-footer text-xs-center">{{ data.hemispheres_list[0].title }}</div>
+      <div class="container">
+         <div class="jumbotron text-center">
+            <div class="row">
+               <div class="col-sm-8">
+                  <h2><strong>Featured Mars Image</strong></h2>
+                  <hr>
+                  <a href="{{  data.featured_image_url }}"><img src="{{ data.featured_image_url }}" alt="Featured Mars Image" width=100%></a>
+               </div>
+               <div class="col-sm-4">
+                  <div class="col-sm-12">
+                     <div class="card border-secondary mb-3" style="max-width: 60rem;">
+                        <div class="card-body">
+                           <h4 class="card-title">Current Weather on Mars</h4>
+                           <hr>
+                           <p class="card-text">{{ data.mars_weather }}</p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-sm-12">
+                     <div class="card border-secondary mb-3" style="max-width: 28rem;">
+                        <div class="card-body">
+                           <h4 class="card-title">Mars Facts</h4>
+                           <p class="card-text"></p>
+                           {{ data.marsfacts | safe}}</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
             </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="card card-default">
-                <div class="card-block text-xs-center">
-                    <img src="{{ data['hemispheres_list'][1]['img'] }}" alt="2nd Hemisphere" width=100%>
-                </div>
-                <div class="card-footer text-xs-center">{{ data.hemispheres_list[1].title }}</div>
+         </div>
+      </div>
+      <div class="container">
+         <div class="jumbotron text-center">
+            <h2><strong>Mars Hemispheres</strong></h2>
+            <hr>
+            <div class="row" >
+               <div class="col-sm-6">
+                  <div class="card card-default">
+                     <div class="card-block text-xs-center">
+                        <img src="{{ data['hemispheres_list'][0]['img'] }}" alt="1st Hemisphere" width=100%>
+                     </div>
+                     <div class="card-footer text-xs-center">{{ data.hemispheres_list[0].title }}</div>
+                  </div>
+               </div>
+               <div class="col-sm-6">
+                  <div class="card card-default">
+                     <div class="card-block text-xs-center">
+                        <img src="{{ data['hemispheres_list'][1]['img'] }}" alt="2nd Hemisphere" width=100%>
+                     </div>
+                     <div class="card-footer text-xs-center">{{ data.hemispheres_list[1].title }}</div>
+                  </div>
+               </div>
+               <div class="col-sm-6">
+                  <div class="card card-default">
+                     <div class="card-block text-xs-center">
+                        <img src="{{ data['hemispheres_list'][2]['img'] }}" alt="3rd Hemisphere" width=100%>
+                     </div>
+                     <div class="card-footer text-xs-center">{{ data.hemispheres_list[2].title }}</div>
+                  </div>
+               </div>
+               <div class="col-sm-6">
+                  <div class="card card-default">
+                     <div class="card-block text-xs-center">
+                        <img src="{{ data['hemispheres_list'][3]['img']}}" alt="4th Hemisphere" width=100%>
+                     </div>
+                     <div class="card-footer text-xs-center">{{ data.hemispheres_list[3].title }}</div>
+                  </div>
+               </div>
             </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="card card-default">
-                <div class="card-block text-xs-center">
-                    <img src="{{ data['hemispheres_list'][2]['img'] }}" alt="3rd Hemisphere" width=100%>
-                </div>
-                <div class="card-footer text-xs-center">{{ data.hemispheres_list[2].title }}</div>
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="card card-default">
-                <div class="card-block text-xs-center">
-                    <img src="{{ data['hemispheres_list'][3]['img']}}" alt="4th Hemisphere" width=100%>
-                </div>
-                <div class="card-footer text-xs-center">{{ data.hemispheres_list[3].title }}</div>
-            </div>
-        </div>
-    </div>
-    </div>  
-  </div>  
-  
-  
-
-
-</body>
-
+         </div>
+      </div>
+   </body>
 </html>
