@@ -89,6 +89,10 @@ For explanatory analysis the below graphs were produced in Tableau.
 
 ![Peak](images/Peak.PNG)
 
+## Trends
+
+![trends](images/trends.PNG)
+
 Tableau was also used to produce two sets of maps.
 
 ## Static
