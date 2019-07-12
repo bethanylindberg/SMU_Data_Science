@@ -68,35 +68,35 @@ Precipitation and temperature data was downloaded from [here](http://www.cnyweat
 
 As shown in the below area graph, there is an unusual spike of birth years listed at 1969 and several records for every year between 1857 and 1939. These years were filtered out of the demographic analysis.
 
-![ages](images/ages.png)
+![ages](images/ages.PNG)
 
 
 # Methods
 
 The below aggregation was done in Jupyter Notebooks with Python and Pandas to estimate how many rides are taken for business purposes.
 
-![dailyrides](images/dailyrides.png)
+![dailyrides](images/dailyrides.PNG))
 
 For explanatory analysis the below graphs were produced in Tableau.
 
 ## Demographics
 
-![demographics](images/demographics.png)
+![demographics](images/demographics.PNG))
 
 ## Peak
 
-![Peak](images/Peak.png)
+![Peak](images/Peak.PNG))
 
 Tableau was also used to produce two sets of maps.
 
 ## Static
 
 Annotated map showing trips over the entire dataset
-![Static](images/Static.png)
+![Static](images/Static.PNG))
 
 ## Dynamic 
 
 Map showing each day of data set
 
-![dynamicmap](dynamicmap.gif)
+![dynamicmap](images/dynamicmap.gif)
 
