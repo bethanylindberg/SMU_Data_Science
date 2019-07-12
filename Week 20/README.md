@@ -11,32 +11,55 @@ The citibike data was downloaded from [here](https://www.citibikenyc.com/system-
 ### Trip Data:
 
 Tripduration: integer representing total length of trip in minutes
+
 Starttime: Start of trip date and time e.g. 1/24/2018 7:31:33 PM
+
 Stoptime: Stop of trip date and time e.g. Stoptime1/24/2018 7:41:08 PM
+
 Start Station Id
+
 Start Station Name
+
 Start Station Latitude
+
 Start Station Longitude
+
 End Station Id
+
 End Station Name
+
 End Station Latitude
+
 End Station Longitude
+
 Bikeid
+
 Usertype: User type for this trip (Customer or Subscriber)
+
 Birth Year: User birth year if known
+
 Gender: Integer code for gender
+
 Date: Date of trip
+
 Gender Text: Gender string
 
 ### Daily Ridership:
 
 Date
+
 Trips over the past 24-hours (midnight to 11:59pm)
+
 Miles traveled today (midnight to 11:59 pm)
+
 Total Annual Members (All Time)
+
 New Members: Difference between prior day numbers and current entry
+
 24-Hour Passes Purchased (midnight to 11:59 pm)
+
 3-Day Passes Purchased (midnight to 11:59 pm)
+
 Total Passes Purchased: Sum of 24-hour and 3-day passes purchase
 
 ### Weather:
