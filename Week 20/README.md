@@ -6,7 +6,7 @@ The purpose of this report is to visualize historic rental bike data in New York
 
 # Overview of the Data
 
-The citibike data was downloaded from [here](https://www.citibikenyc.com/system-data). For this analysis the time period chosen is January 2018 to June 2019. Parameters are listed below.
+The citibike data was downloaded from [citibikenyc.com](https://www.citibikenyc.com/system-data). For this analysis the time period chosen is January 2018 to June 2019. Parameters are listed below.
 
 ### Trip Data:
 
@@ -64,7 +64,7 @@ Total Passes Purchased: Sum of 24-hour and 3-day passes purchase
 
 ### Weather:
 
-Precipitation and temperature data was downloaded from [here](http://www.cnyweather.com/wxraindetail.php?year=2019). Parameters collected included daily accumulated precipitation in inches and daily high and low temperatures in Fahrenheit.
+Precipitation and temperature data was downloaded from [cnyweather.com](http://www.cnyweather.com/wxraindetail.php?year=2019). Parameters collected included daily accumulated precipitation in inches and daily high and low temperatures in Fahrenheit.
 
 ## Limitations of the Data
 
@@ -72,6 +72,7 @@ As shown in the below area graph, there is an unusual spike of birth years liste
 
 ![ages](images/ages.PNG)
 
+With the three above data sources joined in Tabluea, there is a total of 24,477,987 rows and 20 columns.
 
 # Methods
 
@@ -106,3 +107,16 @@ Map showing each day of data set
 
 ![dynamicmap](images/dynamicmap.gif)
 
+# Results of Analysis
+
+Demographic analysis revealed that most of the rides are taken by subscribers with less than 12% of total rides taken by an unsubscribed customer. Distribution of rides by gender and year reveals that there is a similar left skewed trend for both genders with peak birth years between 1980 and 1993. 
+
+Reviewing trends by gender and age of number of rides and average trip duration shows that male users take more rides in every age group while females take longer trips at almost every birth year.
+
+A review of trips when reviewed by time of day and week reveals that peak hours differ between weekend and weekdays, with more trips being taken overall during the week day than Saturday and Sunday. An analysis of peak months and dates shows that there are no outliers, all dates and months falling with a normal distribution and peak months being late Spring and early Summer while the months with the lowest number or records falling in the winter months. 
+
+Examination of relationships between number or records and weather shows that changes in precipitation does not appear to have any association with changes in number of rides. Temperature does have a weak positive linear relationship with number of rides, but with an r2 of .54 is not a useful metric for predictive analytics.
+
+The static map confirms what many would expect of the dataset with most trips being centered around Manhattan hot spots and the longest trips ending farther from the city center.
+
+A review of the purchases and miles traveled over time shows a clear seasonality previously observed in the plot of peak dates. An overview shows up upward trend in number of bikes, total members and total stations and a downward trend in bikes per member.
