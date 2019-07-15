@@ -15,20 +15,17 @@ The data was preprocessed by removing unnessecary columns and null rows, leaving
 
 The first algorithm used was Support Vector Machine from the SKLearn python library. Grid search was then used to hypertune the C and gamma parameters to imrove predictions. The reports produced are below.
 
-
-![SVM.PNG](Images/SVM.PNG)
-
-![SVM2.PNG](Images/SVM2.PNG)
+![SVM.PNG](Images/SVM.PNG) ![SVM2.PNG](Images/SVM2.PNG)
 
 
+The Random Forest and Gradient Boosting algorithms were an improvement on the SVM model.
 
-![Naive Bayes.PNG](Images/Naive Bayes.PNG)
+![RandomForest.PNG](Images/RandomForest.PNG) ![Boosting.PNG](Images/Boosting.PNG)
 
-![Boosting.PNG](Images/Boosting.PNG)
 
-![RandomForest.PNG](Images/RandomForest.PNG)
+Two Further algorithms used for this dataset were Naive Bayes and K Neighbors though neither were found to have favorable results.
 
-![KNeighbors.PNG](Images/KNeighbors.PNG)
+![NaiveBayes.PNG](Images/NaiveBayes.PNG) ![KNeighbors.PNG](Images/KNeighbors.PNG)
 
 
 ## Results
