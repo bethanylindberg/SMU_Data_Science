@@ -4,62 +4,34 @@
 
 ## Background
 
-Over a period of nine years in deep space, the NASA Kepler space telescope has been out on a planet-hunting mission to discover hidden planets outside of our solar system.
+[Exoplanet Data Source](https://www.kaggle.com/nasa/kepler-exoplanet-search-results)
 
-To help process this data, you will create machine learning models capable of classifying candidate exoplanets from the raw dataset.
+Over a period of nine years in deep space, the NASA Kepler space telescope has been out on a planet-hunting mission to discover hidden planets outside of our solar system. This project will examine the raw data and experiement with different machine learnign models to find the best predictors. The data was preprocessed, scaled and then classified by one of three labels: "Candidate", "Confirmed" and "False Positive."
 
-In this homework assignment, you will need to:
 
-1. [Preprocess the raw data](#Preprocessing)
-2. [Tune the models](#Tune-Model-Parameters)
-3. [Compare two or more models](#Evaluate-Model-Performance)
+## Methodology
 
-- - -
+The data was preprocessed by removing unnessecary columns and null rows, leaving a total of 8744 observations with which to create a machine learning model. The data was then scaled with MinMaxScaler and separated into training and testing data.
 
-## Instructions
+The first algorithm used was Support Vector Machine from the SKLearn python library. Grid search was then used to hypertune the C and gamma parameters to imrove predictions. The reports produced are below.
 
-### Preprocess the Data
 
-* Preprocess the raw dataset prior to fitting the model.
-* Perform feature selection and remove unnecessary features.
-* Use `MinMaxScaler` to scale the numerical data.
-* Separate the data into training and testing data.
+![SVM.PNG](Images/SVM.PNG)
 
-### Tune Model Parameters
+![SVM2.PNG](Images/SVM2.PNG)
 
-* Use `GridSearch` to tune model parameters.
-* Tune and compare at least two different classifiers.
 
-### Evaluate Model Performance
 
-Compare the performance of two or more classifiers to determine the best model performance.
+![Naive Bayes.PNG](Images/Naive Bayes.PNG)
 
-- - -
+![Boosting.PNG](Images/Boosting.PNG)
 
-## Resources
+![RandomForest.PNG](Images/RandomForest.PNG)
 
-* [Exoplanet Data Source](https://www.kaggle.com/nasa/kepler-exoplanet-search-results)
+![KNeighbors.PNG](Images/KNeighbors.PNG)
 
-* [Scikit-Learn Tutorial Part 1](https://www.youtube.com/watch?v=4PXAztQtoTg)
 
-* [Scikit-Learn Tutorial Part 2](https://www.youtube.com/watch?v=gK43gtGh49o&t=5858s)
+## Results
 
-* [Grid Search](https://scikit-learn.org/stable/modules/grid_search.html)
 
-- - -
 
-## Hints and Considerations
-
-* Start by cleaning the data, removing unnecessary columns, and scaling the data.
-
-* Try a simple model first, and then tune the model using `GridSearch`.
-
-- - -
-
-## Submission
-
-* Create a Jupyter Notebook and host the notebook on GitHub.
-
-* Include a README.md file that summarizes your assumptions and findings.
-
-* Submit the link to your GitHub project to Bootcamp Spot.
