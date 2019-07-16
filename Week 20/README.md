@@ -2,7 +2,7 @@
 
 The purpose of this report is to visualize historic rental bike data in New York City in order to search for trends that can lead to actionable insights. In a large city such as New York a diverse array of transportation options will always be necessary to serve the population and keep traffic congestion to a minimum. Bike rentals are one option of many and should be encouraged because of the availability of bike lanes and the benefit of being an environmentally friendly selection.
 
-[The Tableau story can be viewed by clicking here (A login to Tableau public may be required)](https://prod-useast-a.online.tableau.com/t/bethanylindberg/views/Citibike/CitiBikeStory)
+[The Tableau story can be viewed by clicking here](https://bethanylindberg.github.io/CitiBike/)
 
 # Overview of the Data
 
