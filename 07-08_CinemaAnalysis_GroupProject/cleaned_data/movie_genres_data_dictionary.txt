@@ -1,0 +1,26 @@
+1. Title: movie_genres_cleaned
+
+2. Source: OMDB API
+http://www.omdbapi.com/
+
+3. Relevant Information:
+	This dataset was created to do analysis of moveis by genre.
+
+4. Number of Instances: 24389
+
+5. Attributes:
+
+Title: Title of movie or series, the localized title
+Year: represents the release year of a title
+Released: represents the release date of a title
+Runtime: primary runtime of the title, in min or hr and min
+Genre: Narrowed to a single genre and multiple genres "exploded" to multiple rows
+Country: Country of origin
+RT_Rating: rotten tomatoes rating (raw)
+Metascore Metascore rating (raw)
+imdbRating: weighted average of all the individual user ratings (raw)
+imdbVotes: number of votes the title has received
+Type: the type/format of the title (e.g. movie, short, tvseries, tvepisode, video, etc)
+Production: Production company associated with title
+RT_Ratings2: rotten tomatoes rating formatted
+imdbRating2: weighted average of all the individual user ratings formatted and multiplied by 10 to match rotten tomatoes scale

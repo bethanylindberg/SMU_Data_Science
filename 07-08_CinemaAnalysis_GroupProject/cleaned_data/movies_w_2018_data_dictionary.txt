@@ -1,0 +1,49 @@
+1. Title: movies_w_2018_cleaned
+
+2. Source: OMDB API
+http://www.omdbapi.com/
+
+3. Relevant Information:
+	Data has been cleaned and filtered to include years 1970-2018.
+
+4. Number of Instances: 17605 
+						note: raw_omdb has 45843 instances
+
+5. Attributes:
+
+Raw Data Attributes:
+Title: Title of movie or series, the localized title
+Year: represents the release year of a title
+Released: represents the release date of a title
+Runtime: primary runtime of the title, in min or hr and min
+Genre: There are a total of 23 unique genres included in the raw data, between 1 and 10 for each title
+Director: director(s) of the given title
+Writer: writer(s) of the given title
+Actors: Lead actors
+Plot: Short synopsis of plot
+Country: Country of origin
+Awards: summary of awards if any
+RT_Rating: rotten tomatoes rating
+Metascore Metascore rating
+imdbRating: weighted average of all the individual user ratings
+imdbVotes: number of votes the title has received
+imdbID: a tconst, an alphanumeric unique identifier of the title
+Type: the type/format of the title (e.g. movie, short, tvseries, tvepisode, video, etc)
+BoxOffice: Box Office earnings
+Production: Production company associated with title
+
+Cleaned Data Attributes:
+Title: Title of movie or series, the localized title
+Year: represents the release year of a title
+Released: represents the release date of a title
+Runtime: primary runtime of the title, in min or hr and min
+Genre: There are a total of 23 unique genres included in the raw data, between 1 and 10 for each title
+Country: Country of origin
+RT_Rating: rotten tomatoes rating (raw)
+Metascore Metascore rating (raw)
+imdbRating: weighted average of all the individual user ratings (raw)
+imdbVotes: number of votes the title has received
+Type: the type/format of the title (e.g. movie, short, tvseries, tvepisode, video, etc)
+Production: Production company associated with title
+RT_Ratings2: rotten tomatoes rating formatted
+imdbRating2: weighted average of all the individual user ratings formatted and multiplied by 10 to match rotten tomatoes scale
