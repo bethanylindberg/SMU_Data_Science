@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weather Visualization Dashboard</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,300|Open+Sans:400,600,700,300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="css/animate.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <!-- =======================================================
+    Theme Name: Bethany
+    Theme URL: https://bootstrapmade.com/bethany-free-onepage-bootstrap-theme/
+    Author: BootstrapMade.com
+    Author URL: https://bootstrapmade.com
+  ======================================================= -->
+</head>
+
+<body>
+  <div class="main-container">
+  <!--header-->
+  <header class="header" id="header">
+    <div class="bg-color">
+      <!--nav-->
+      <nav class="nav navbar-default navbar-fixed-top">
+        <div class="container">
+          <div class="col-md-12">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mynavbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="fa fa-bars"></span>
+                        </button>
+              <a href="index.html" class="navbar-brand">Latitude</a>
+            </div>
+            <div class="collapse navbar-collapse navbar-right" id="mynavbar">
+              <ul class="nav navbar-nav">
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Plots
+                      </a>
+                  <div class="dropdown-menu" >
+                      <a class="dropdown-item" href="temperature.html">Max Temperature</a>
+                      <br>
+                      <a class="dropdown-item" href="humidity.html">Humidity</a>
+                      <br>
+                      <a class="dropdown-item" href="cloudiness.html">Cloudiness</a>
+                      <br>
+                      <a class="dropdown-item" href="wind_speed.html">Wind Speed</a>
+                    </div>
+                </li>
+                <li><a href="comparison.html">Comparison</a></li>
+                <li><a href="data.html">Data</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!--/ nav-->
+      <div class="container text-center" style="height:150px">
+        <div class="wrapper wow fadeInUp delay-05s">
+        </div>
+      </div>
+    </div>
+  </header>
+  <!--/ header-->
+ 
+ 
+  <!---->
+  <section class="section-padding wow fadeInUp delay-02s" id="portfolio">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="col-md-8 col-sm-12">
+          <div class="section-title">
+            <h2 class="head-title">Humidity</h2>
+            <hr class="botm-line">
+            <p>For the purpose of this analysis, latitude will serve as the independent variable for several weather conditions. 
+              This will yield scatter plots that show visually how these weather conditions vary throughout 
+              Earth and reveal if there are any visible patterns.
+              <br>
+              <br>
+              <strong>Analysis</strong>
+              <br>
+              The visualization of humidity does not show any observable trends between different latitudes.
+              <img src="assets\latvhumd.png" alt="Humidity">
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-12">
+          <div class="section-title">
+            <h2 class="head-title">Visualizations</h2>
+            <hr class="botm-line">
+          </div>
+          <div class="col-md-6 col-sm-6 padding-right-zero">
+            <div class="portfolio-box design">
+              <a href="temperature.html">
+              <img src="assets\latvtemp.png" alt="Temperature" class="img-responsive">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-sm-6 padding-right-zero">
+            <div class="portfolio-box design">
+              <a href="cloudiness.html">
+              <img src="assets\latvcloud.png" alt="Cloudiness" class="img-responsive">
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6 padding-right-zero">
+            <div class="portfolio-box design">
+              <a href="wind_speed.html">
+              <img src="assets\latvwind.png" alt="Wind Speed" class="img-responsive">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!---->
+    <!---->
+    <footer class="footer" id="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-7 footer-copyright">
+            © Bethany Theme - All rights reserved
+            <div class="credits">
+              <!--
+                All the links in the footer should remain intact.
+                You can delete the links only if you purchased the pro version.
+                Licensing information: https://bootstrapmade.com/license/
+                Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Bethany
+              -->
+              Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            </div>
+        </div>
+      </div>
+    </footer>
+    <!---->
+  <!--contact ends-->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery.easing.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/wow.js"></script>
+  <script src="js/custom.js"></script>
+  <script src="contactform/contactform.js"></script>
+</div>
+</body>
+</html>

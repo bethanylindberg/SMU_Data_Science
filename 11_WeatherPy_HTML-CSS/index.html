@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weather Visualization Dashboard</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,300|Open+Sans:400,600,700,300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="css/animate.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <!-- =======================================================
+    Theme Name: Bethany
+    Theme URL: https://bootstrapmade.com/bethany-free-onepage-bootstrap-theme/
+    Author: BootstrapMade.com
+    Author URL: https://bootstrapmade.com
+  ======================================================= -->
+</head>
+
+<body>
+<div class="main-container">
+  <!--header-->
+  <header class="main-header" id="header">
+    <div class="bg-color">
+      <!--nav-->
+      <nav class="nav navbar-default navbar-fixed-top">
+        <div class="container">
+          <div class="col-md-12">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mynavbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="fa fa-bars"></span>
+                        </button>
+              <a href="index.html" class="navbar-brand">Latitude</a>
+            </div>
+            <div class="collapse navbar-collapse navbar-right" id="mynavbar">
+              <ul class="nav navbar-nav">
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Plots
+                      </a>
+                  <div class="dropdown-menu" >
+                      <a class="dropdown-item" href="temperature.html">Max Temperature</a>
+                      <br>
+                      <a class="dropdown-item" href="humidity.html">Humidity</a>
+                      <br>
+                      <a class="dropdown-item" href="cloudiness.html">Cloudiness</a>
+                      <br>
+                      <a class="dropdown-item" href="wind_speed.html">Wind Speed</a>
+                    </div>
+                </li>
+                <li><a href="comparison.html">Comparison</a></li>
+                <li><a href="data.html">Data</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!--/ nav-->
+      <div class="container text-center">
+        <div class="wrapper wow fadeInUp delay-05s">
+        </div>
+      </div>
+    </div>
+  </header>
+  <!--/ header-->
+  <!---->
+  <section id="cta-1">
+    <div class="container">
+      <div class="row">
+        <div class="cta-info text-center">
+          <h3><span class="dec-tec">“</span>Sunshine is delicious, rain is refreshing, wind braces us up, snow is exhilarating; there is really no such thing as bad weather, only different kinds of good weather. 
+            <span class="dec-tec">”</span> -John Ruskin</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!---->
+ 
+  <!---->
+  <section class="section-padding wow fadeInUp delay-02s" id="portfolio">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="col-md-8 col-sm-12">
+          <div class="section-title">
+            <h2 class="head-title">Summary</h2>
+            <hr class="botm-line">
+            <p class="sec-para">This project will show worldwide weather patterns visually based on geo coordinates. 
+              This category of data analysis in conjunction with other worldwide trends such as spending 
+              habits or crime rates may reveal many interesting and useful insights into the world we live in.
+              <br>
+              <br>
+              <strong>Overview of the Data</strong>
+              <br>
+              Open weather map API was used to retrieve weather data for a list of 500+ cities. 
+              Information gathered included maximum temperature, humidity, cloudiness and wind speed.
+              <br>
+              <br>
+              <strong>Limitations of the Data</strong>
+              <br>
+              Several iterations of the calls resulted in extreme outliers which upon closer 
+              inspection were not correct at the time the call was made. For example, one instance listed Parrita, 
+              Costa Rica as having a wind speed of 122 mph when the actual wind speed at the time was 7 mph. This is 
+              most likely a glitch existing on the open weather app. The x and y limitations of the scatter plots 
+              were adjusted to compensate where necessary. Because this analysis was done using city names and not 
+              coordinates there are large gaps in the data resulting from unpopulated areas not being included. 
+              This is most easily understood by viewing the gmap below.</p>
+              <img src="assets\map.png" alt="map" width=100%>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-12">
+          <div class="section-title">
+            <h2 class="head-title">Visualizations</h2>
+            <hr class="botm-line">
+          </div>
+          <div class="col-md-6 col-sm-6 padding-right-zero">
+            <div class="portfolio-box design">
+              <a href="temperature.html">
+              <img src="assets\latvtemp.png" alt="Temperature" class="img-responsive">
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6 padding-right-zero">
+            <div class="portfolio-box design">
+              <a href="temperature.html">
+              <img src="assets\latvcloud.png" alt="Cloudiness" class="img-responsive">
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6 padding-right-zero">
+            <div class="portfolio-box design">
+              <a href="temperature.html">
+              <img src="assets\latvhumd.png" alt="Humidity" class="img-responsive">
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6 padding-right-zero">
+            <div class="portfolio-box design">
+              <a href="temperature.html">
+              <img src="assets\latvwind.png" alt="Wind Speed" class="img-responsive">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!---->
+
+  <!---->
+  <footer class="main-footer" id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-7 footer-copyright">
+          © Bethany Theme - All rights reserved
+          <div class="credits">
+            <!--
+              All the links in the footer should remain intact.
+              You can delete the links only if you purchased the pro version.
+              Licensing information: https://bootstrapmade.com/license/
+              Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Bethany
+            -->
+            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+          </div>
+      </div>
+    </div>
+  </footer>
+  <!---->
+  <!--contact ends-->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery.easing.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/wow.js"></script>
+  <script src="js/custom.js"></script>
+  <script src="contactform/contactform.js"></script>
+</div>  
+</body>
+</html>
