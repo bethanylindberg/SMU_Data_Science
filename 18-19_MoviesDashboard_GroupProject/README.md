@@ -15,16 +15,17 @@ the actor's page url = f"https://www.imdb.com/{nameid}/", where the movieid, cre
 
 The movieid was used to scrape the movie information from the  http://www.omdbapi.com/ API. 
 
-All data from the web scrapping was converted to a panada dataframes then saved into CSV files.
+All data from the web scraping was converted to a panada dataframes then saved into CSV files.
 
 ## Limitations of the Data
 
-The dates available for tv show appearances were the original release dates of the tv shows.
+The dates available for tv show appearances were the original release dates of the tv shows, and not the date of appearance.
+
 Some movie information was not available for credits. 
 
 
 # Methods
 
-The data is stored using SQLite, queried using SQLAlchemy,coverted into JSON for API endpoints, written into a deployable app using flask then rendered with Heroku. Jupyter notebooks, pandas and d3 is used to examine and visualize the data
+The data is stored using SQLite, queried using SQLAlchemy, coverted into JSON for API endpoints, written into a deployable app using flask then rendered with Heroku. Jupyter notebooks, pandas and D3.js is used to examine and visualize the data.
 
-# Analysis
+
